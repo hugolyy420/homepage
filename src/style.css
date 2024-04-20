@@ -1,0 +1,159 @@
+:root {
+  --system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --accent-color: #70afe8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 0px) {
+  .logo {
+    pointer-events: none;
+    width: clamp(1.5rem, 1rem + 5vw, 2.7rem);
+    fill: red;
+  }
+
+  h2 {
+    font-weight: 200;
+    font-size: clamp(0.5rem, 0.4rem + 3vw, 2rem);
+  }
+
+  header {
+    font-family: var(--system-ui);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(0.8rem, 0.4rem + 2vw, 1.5rem);
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
+    -moz-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
+    box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
+  }
+
+  .header-nav {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    top: 100%;
+    gap: clamp(2rem, 1.6rem + 5vw, 3rem);
+    width: 100%;
+    padding: clamp(0.5rem, 0.4rem + 2vw, 1.7rem);
+    background-color: #fff;
+    -webkit-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
+    -moz-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
+    box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
+  }
+
+  .nav-tab,
+  .nav-tab:hover,
+  .nav-tab:focus,
+  .nav-tab:active {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 500ms ease-in-out;
+  }
+
+  .nav-tab:hover,
+  .nav-tab:active {
+    transform: scale(1.2);
+  }
+
+  .hamburger-menu-button {
+    font-size: clamp(0.8rem, 0.5rem + 5vw, 2rem);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .visible {
+    display: flex;
+    animation: expand 500ms ease-in-out;
+    transform-origin: top;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--system-ui);
+  }
+
+  section {
+    max-width: 1280px;
+    width: 100%;
+    margin: clamp(2rem, 1.8rem + 3vw, 4rem);
+    padding: clamp(3rem, 2.5rem + 5vw, 3.5rem) clamp(1rem, 0.8rem + 3vw, 1.5rem);
+  }
+
+  .home-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: clamp(2rem, 1.8rem + 4vw, 5rem);
+  }
+
+  .intro {
+    line-height: 1.8;
+    font-weight: 350;
+  }
+
+  .intro-container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 1.3rem + 2vw, 2.5rem);
+  }
+
+  .home-img {
+    width: clamp(15rem, 13rem + 8vw, 25rem);
+  }
+
+  @keyframes expand {
+    0% {
+      transform: scaleY(0);
+    }
+
+    70% {
+      transform: scaleY(1.1);
+    }
+
+    100% {
+      transform: scaleY(1);
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    justify-content: space-around;
+  }
+
+  .header-nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: auto;
+    box-shadow: none;
+  }
+
+  .hamburger-menu-button {
+    display: none;
+  }
+
+  .home-section {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+}
