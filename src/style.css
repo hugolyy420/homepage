@@ -1,7 +1,7 @@
 :root {
   --system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --accent-color: #70afe8;
+  --accent-color: #4b749b;
 }
 
 * {
@@ -11,15 +11,24 @@
 }
 
 @media screen and (min-width: 0px) {
+  /* <--General--> */
+  h2 {
+    font-weight: 250;
+    font-size: clamp(0.9rem, 0.35rem + 3.5vw, 2rem);
+  }
+  /* <--Header--> */
   .logo {
     pointer-events: none;
     width: clamp(1.5rem, 1rem + 5vw, 2.7rem);
     fill: red;
   }
 
-  h2 {
-    font-weight: 200;
-    font-size: clamp(0.5rem, 0.4rem + 3vw, 2rem);
+  p {
+    font-size: clamp(0.7rem, 0.05rem + 3vw, 1.1rem);
+  }
+
+  .illustration {
+    width: clamp(15rem, 13rem + 8vw, 25rem);
   }
 
   header {
@@ -79,6 +88,8 @@
     transform-origin: top;
   }
 
+  /* <--main--> */
+
   main {
     display: flex;
     flex-direction: column;
@@ -89,22 +100,28 @@
   section {
     max-width: 1280px;
     width: 100%;
-    margin: clamp(2rem, 1.8rem + 3vw, 4rem);
-    padding: clamp(3rem, 2.5rem + 5vw, 3.5rem) clamp(1rem, 0.8rem + 3vw, 1.5rem);
-  }
-
-  .home-section {
+    margin: clamp(2rem, 1.8rem + 4vw, 6rem);
+    padding: clamp(3rem, 2.5rem + 5vw, 3.5rem) clamp(3rem, 0.8rem + 5vw, 4rem);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: clamp(4rem, 1rem + 6vw, 10rem);
+  }
+
+  /* <--home--> */
+
+  .home-section {
     text-align: center;
-    gap: clamp(2rem, 1.8rem + 4vw, 5rem);
   }
 
   .intro {
     line-height: 1.8;
-    font-weight: 350;
+    font-weight: 450;
+  }
+
+  .name {
+    color: var(--accent-color);
   }
 
   .intro-container {
@@ -113,9 +130,43 @@
     gap: clamp(2rem, 1.3rem + 2vw, 2.5rem);
   }
 
-  .home-img {
-    width: clamp(15rem, 13rem + 8vw, 25rem);
+  /* <--about--> */
+
+  .skill-icon {
+    width: clamp(4rem, 1.5rem + 5vw, 6rem);
   }
+
+  .skills-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    justify-items: center;
+    gap: clamp(3rem, 1rem + 2vw, 5rem);
+  }
+
+  .skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1rem, 0.5rem + 2vw, 2rem);
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(4rem, 1rem + 5vw, 6rem);
+  }
+
+  .about-texts-container {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: clamp(2rem, 0.2rem + 2vw, 4rem);
+    line-height: 1.9;
+  }
+
+  /* <--animation--> */
 
   @keyframes expand {
     0% {
@@ -133,6 +184,7 @@
 }
 
 @media screen and (min-width: 1024px) {
+  /* <--header--> */
   header {
     justify-content: space-around;
   }
@@ -151,6 +203,10 @@
   }
 
   .home-section {
+    flex-direction: row;
+  }
+  /* <--about--> */
+  .about-container {
     flex-direction: row;
   }
 }
