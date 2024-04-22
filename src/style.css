@@ -13,6 +13,10 @@
 
 @media screen and (min-width: 0px) {
   /* <--General--> */
+  html {
+    scroll-behavior: smooth;
+  }
+
   h1 {
     font-weight: 400;
     font-size: clamp(1.6rem, 0.5rem + 4vw, 2.5rem);
@@ -58,6 +62,7 @@
     -webkit-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     -moz-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
+    transition: top 0.3s;
   }
 
   .header-nav {
@@ -74,6 +79,7 @@
     -webkit-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     -moz-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
+    transition: top 0.3s;
   }
 
   .nav-tab,
@@ -82,12 +88,12 @@
   .nav-tab:active {
     text-decoration: none;
     color: inherit;
-    transition: transform 500ms ease-in-out;
+    transition-duration: 400ms;
   }
 
   .nav-tab:hover,
   .nav-tab:active {
-    transform: scale(1.2);
+    color: var(--accent-color);
   }
 
   .hamburger-menu-button {
@@ -232,11 +238,71 @@
     align-items: center;
     flex-direction: column;
     gap: clamp(4rem, 1rem + 5vw, 6rem);
+    text-align: justify;
+  }
+
+  .contact-text-container {
+    line-height: 1.5;
   }
 
   .tooltip {
     position: relative;
     display: inline-block;
+    text-decoration: none;
+    color: var(--accent-color);
+  }
+
+  .tooltiptext {
+    visibility: hidden;
+    width: 150%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: clamp(0.5rem, 0.1rem + 1vw, 0.7rem);
+    font-size: clamp(0.5rem, 0.05rem + 2vw, 0.9rem);
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    outline: none;
+  }
+
+  .tooltip:focus,
+  .tooltip:hover {
+    text-decoration: underline;
+  }
+
+  /* <--footer--> */
+
+  footer {
+    padding: clamp(2rem, 0.3rem + 3vw, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(2rem, 0.2rem + 2vw, 3rem);
+  }
+
+  .footer-links-container {
+    display: flex;
+    gap: clamp(0.7rem, 0.2rem + 1vw, 1.1rem);
+  }
+
+  .footer-link {
+    color: #000;
+    transition-duration: 400ms;
+  }
+
+  .footer-link:hover {
+    color: var(--accent-color);
   }
 
   /* <--animation--> */
