@@ -52,11 +52,11 @@
 
   /* <--Header--> */
   .logo {
-    width: clamp(1.5rem, 1rem + 5vw, 2.7rem);
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--accent-color);
     h1 {
       font-weight: 600;
+      font-size: clamp(2rem, 0.5rem + 2vw, 2.5rem);
     }
   }
 
@@ -108,7 +108,6 @@
   .nav-tab:active {
     text-decoration: none;
     color: inherit;
-    transition-duration: 400ms;
   }
 
   .nav-tab:hover,
@@ -117,7 +116,7 @@
   }
 
   .hamburger-menu-button {
-    font-size: clamp(0.8rem, 0.5rem + 5vw, 2rem);
+    font-size: clamp(0.5rem, 0.5rem + 4vw, 2rem);
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -133,7 +132,7 @@
     justify-content: center;
     cursor: pointer;
     color: var(--secondary-color);
-    transition-duration: 400ms;
+    gap: 0.5rem;
   }
 
   .theme-button:hover {

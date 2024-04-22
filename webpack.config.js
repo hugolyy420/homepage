@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -14,7 +15,7 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
-    // new FaviconsWebpackPlugin('./src/favicon-32x32.png'),
+    new FaviconsWebpackPlugin('./src/favicon_io/apple-touch-icon.png'),
   ],
   devtool: 'inline-source-map',
   devServer: {
@@ -44,6 +45,10 @@ module.exports = {
       {
         test: /.s?css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
     ],
   },
