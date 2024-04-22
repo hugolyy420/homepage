@@ -3,6 +3,17 @@
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --accent-color: #4b749b;
   --primary-color: #fff;
+  --secondary-color: #181f38;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+:root .dark-mode {
+  --accent-color: #7cabd7;
+  --primary-color: #181f38;
+  --secondary-color: #d6d6d6;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 * {
@@ -41,9 +52,12 @@
 
   /* <--Header--> */
   .logo {
-    pointer-events: none;
     width: clamp(1.5rem, 1rem + 5vw, 2.7rem);
-    fill: red;
+    text-decoration: none;
+    color: var(--secondary-color);
+    h1 {
+      font-weight: 600;
+    }
   }
 
   p {
@@ -58,11 +72,17 @@
     padding: clamp(0.8rem, 0.4rem + 2vw, 1.5rem);
     position: sticky;
     top: 0;
-    background-color: #fff;
+    background-color: var(--primary-color);
     -webkit-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     -moz-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     transition: top 0.3s;
+  }
+
+  :root .dark-mode header,
+  :root .dark-mode .header-nav {
+    background-color: #2e364e;
+    box-shadow: none;
   }
 
   .header-nav {
@@ -75,7 +95,7 @@
     gap: clamp(2rem, 1.6rem + 5vw, 3rem);
     width: 100%;
     padding: clamp(0.5rem, 0.4rem + 2vw, 1.7rem);
-    background-color: #fff;
+    background-color: var(--primary-color);
     -webkit-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     -moz-box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
     box-shadow: 0px 4px 6px -3px rgba(177, 177, 177, 1);
@@ -101,6 +121,23 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    color: var(--secondary-color);
+  }
+
+  .theme-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition-duration: 400ms;
+  }
+
+  .theme-button:hover {
+    color: var(--accent-color);
   }
 
   .visible {
@@ -179,6 +216,15 @@
     gap: clamp(4rem, 1rem + 5vw, 6rem);
   }
 
+  .art-link {
+    text-decoration: none;
+    color: var(--accent-color);
+  }
+
+  .art-link:hover {
+    text-decoration: underline;
+  }
+
   /* <--projects--> */
 
   .project-image {
@@ -253,7 +299,7 @@
   }
 
   .tooltiptext {
-    visibility: hidden;
+    display: none;
     width: 150%;
     background-color: black;
     color: #fff;
@@ -271,12 +317,11 @@
   }
 
   .tooltip:hover .tooltiptext {
-    visibility: visible;
+    display: block;
     opacity: 1;
     outline: none;
   }
 
-  .tooltip:focus,
   .tooltip:hover {
     text-decoration: underline;
   }
@@ -297,7 +342,7 @@
   }
 
   .footer-link {
-    color: #000;
+    color: var(--secondary-color);
     transition-duration: 400ms;
   }
 
@@ -358,7 +403,4 @@
   .contact-container {
     flex-direction: row;
   }
-}
-
-@media screen and (min-width: 2000px) {
 }

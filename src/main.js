@@ -6,6 +6,7 @@ const toolTip = document.querySelector('.tooltip');
 const toolTipText = document.querySelector('.tooltiptext');
 let prevScrollpos = window.scrollY;
 const header = document.getElementsByTagName('header');
+const themeButton = document.querySelector('.theme-button');
 
 window.onscroll = () => {
   const currentScrollPos = window.scrollY;
@@ -31,3 +32,18 @@ toolTip.addEventListener('click', (event) => {
     }, 1000);
   });
 });
+
+themeButton.addEventListener('click', () => {
+  if (document.body.classList.contains('dark-mode')) {
+    themeButton.textContent = 'Dark Mode';
+  } else themeButton.textContent = 'Light Mode';
+  document.body.classList.toggle('dark-mode');
+});
+
+if (
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches
+) {
+  themeButton.textContent = 'Light Mode';
+  document.body.classList.add('dark-mode');
+} else themeButton.textContent = 'Dark Mode';
